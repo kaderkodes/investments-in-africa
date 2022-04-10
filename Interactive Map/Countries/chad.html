@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	
+</head>
+<title>Chad</title>
+<body>
+    <script>
+		window.onload = function () {
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				title: {
+					text: "Chinese FDI Flow vs. Net flows in Chad from 2005-2020 (in US$ millions)"
+				},
+				axisY: {
+					title: "US$ millions",
+					titleFontColor: "#000000",
+					lineColor: "#000000",
+					labelFontColor: "#000000",
+					tickColor: "#000000"
+				},
+
+				toolTip: {
+					shared: true
+				},
+				legend: {
+					cursor: "pointer",
+					itemclick: toggleDataSeries
+				},
+				data: [{
+					type: "column",
+					name: "Chinese FDI Flow",
+					legendText: "Chinese FDI Flow",
+					showInLegend: true,
+					dataPoints: [
+						{ label: "2005", y: 2.71 },
+						{ label: "2006", y: 1.61 },
+						{ label: "2007", y: 0.75 },
+						{ label: "2008", y: 9.47},
+						{ label: "2009", y: 51.21},
+						{ label: "2010", y: 2.13},
+						{ label: "2011", y: -12.48},
+						{ label: "2012", y: 80.68},
+						{ label: "2013", y: 120.95},
+						{ label: "2014", y: 83.12},
+						{ label: "2015", y: -17.12},
+						{ label: "2016", y: -62.26},
+						{ label: "2017", y: -23.05},
+						{ label: "2018", y: 67.77},
+						{ label: "2019", y: 49.81},
+						{ label: "2020", y: 98.39}
+					]
+				},
+				
+				{
+					type: "column",
+					name: "Net Flows",
+					legendText: "Net Flows",
+					showInLegend: true,
+					dataPoints: [
+                        { label: "2005", y: -99.342},
+						{ label: "2006", y: -278.413},
+						{ label: "2007", y: -321.654},
+						{ label: "2008", y: 466.130},
+						{ label: "2009", y: 374.899},
+						{ label: "2010", y: 313.0},
+						{ label: "2011", y: 281.899},
+						{ label: "2012", y: 579.793},
+						{ label: "2013", y: 520.200},
+						{ label: "2014", y: -675.545},
+						{ label: "2015", y: 559.642},
+						{ label: "2016", y: 244.682},
+						{ label: "2017", y: 363.381},
+						{ label: "2018", y: 460.890},
+						{ label: "2019", y: 566.638},
+						{ label: "2020", y: 557.692}
+					
+					]
+				}]
+			});
+			chart.render();
+
+			function toggleDataSeries(e) {
+				if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+					e.dataSeries.visible = false;
+				}
+				else {
+					e.dataSeries.visible = true;
+				}
+				chart.render();
+			}
+
+		}
+	</script>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>

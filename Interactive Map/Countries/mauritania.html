@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauritania</title>
+</head>
+<body>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Chinese FDI Flow vs. Net flows in Mauritania from 2005-2020 (in US$ millions)"
+                },
+                axisY: {
+                    title: "US$ millions",
+                    titleFontColor: "#000000",
+                    lineColor: "#000000",
+                    labelFontColor: "#000000",
+                    tickColor: "#000000"
+                },
+
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    itemclick: toggleDataSeries
+                },
+                data: [{
+                    type: "column",
+                    name: "Chinese FDI Flow",
+                    legendText: "Chinese FDI Flow",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 0.36},
+                        { label: "2006", y: 4.78},
+                        { label: "2007", y: -4.98 },
+                        { label: "2008", y: -0.65 },
+                        { label: "2009", y: 6.53},
+                        { label: "2010", y: 5.77},
+                        { label: "2011", y: 19.69},
+                        { label: "2012", y: 30.87 },
+                        { label: "2013", y: 15.27 },
+                        { label: "2014", y: -7.33 },
+                        { label: "2015", y: 2.16 },
+                        { label: "2016", y: 108.79},
+                        { label: "2017", y: 38.07},
+                        { label: "2018", y: 23.23},
+                        { label: "2019", y: -7.46},
+                        { label: "2020", y: 53.20}
+                    ]
+                },
+
+                {
+                    type: "column",
+                    name: "Net Flows",
+                    legendText: "Net Flows",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 811.8 },
+                        { label: "2006", y: 154.6 },
+                        { label: "2007", y: 139.3},
+                        { label: "2008", y: 342.7 },
+                        { label: "2009", y: -3 },
+                        { label: "2010", y: 130.5 },
+                        { label: "2011", y: 588.7 },
+                        { label: "2012", y: 1386 },
+                        { label: "2013", y: 1126 },
+                        { label: "2014", y: 502.5 },
+                        { label: "2015", y: 501.7},
+                        { label: "2016", y: 271.1 },
+                        { label: "2017", y: 588.2 },
+                        { label: "2018", y: 772.8 },
+                        { label: "2019", y: -883.5 },
+                        { label: "2020", y: 927.9 }
+
+                    ]
+                }]
+            });
+            chart.render();
+
+            function toggleDataSeries(e) {
+                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                    e.dataSeries.visible = false;
+                }
+                else {
+                    e.dataSeries.visible = true;
+                }
+                chart.render();
+            }
+
+        }
+    </script>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	
+</head>
+<title>Cameroon</title>
+<body>
+    <script>
+		window.onload = function () {
+
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				title: {
+					text: "Chinese FDI Flow vs. Net flows in Cameroon from 2005-2020 (in US$ millions)"
+				},
+				axisY: {
+					title: "US$ millions",
+					titleFontColor: "#000000",
+					lineColor: "#000000",
+					labelFontColor: "#000000",
+					tickColor: "#000000"
+				},
+
+				toolTip: {
+					shared: true
+				},
+				legend: {
+					cursor: "pointer",
+					itemclick: toggleDataSeries
+				},
+				data: [{
+					type: "column",
+					name: "Chinese FDI Flow",
+					legendText: "Chinese FDI Flow",
+					showInLegend: true,
+					dataPoints: [
+						{ label: "2005", y: 0.19 },
+						{ label: "2006", y: 0.73 },
+						{ label: "2007", y: 2.05 },
+						{ label: "2008", y: 1.69},
+						{ label: "2009", y: 0.82},
+						{ label: "2010", y: 14.88},
+						{ label: "2011", y: 1.87},
+						{ label: "2012", y: 17.65},
+						{ label: "2013", y: 57.20},
+						{ label: "2014", y: 29.74},
+						{ label: "2015", y: 24.67},
+						{ label: "2016", y: 114.23 },
+						{ label: "2017", y: 87.99},
+						{ label: "2018", y: 141.79},
+						{ label: "2019", y: -33.69},
+						{ label: "2020", y: 44.71}
+					]
+				},
+				
+				{
+					type: "column",
+					name: "Net Flows",
+					legendText: "Net Flows",
+					showInLegend: true,
+					dataPoints: [
+                    { label: "2005", y: 243.601 },
+						{ label: "2006", y: 59.122 },
+						{ label: "2007", y: 189.581 },
+						{ label: "2008", y: 20.995 },
+						{ label: "2009", y: 746.276},
+						{ label: "2010", y: 536.265},
+						{ label: "2011", y: 653.266},
+						{ label: "2012", y: 527.363},
+						{ label: "2013", y: 547.404},
+						{ label: "2014", y: 725.854},
+						{ label: "2015", y: 694.336},
+						{ label: "2016", y: 663.893 },
+						{ label: "2017", y: 814.458},
+						{ label: "2018", y: 765.092},
+						{ label: "2019", y: 1025},
+						{ label: "2020", y: 675.186}
+					
+					]
+				}]
+			});
+			chart.render();
+
+			function toggleDataSeries(e) {
+				if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+					e.dataSeries.visible = false;
+				}
+				else {
+					e.dataSeries.visible = true;
+				}
+				chart.render();
+			}
+
+		}
+	</script>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>

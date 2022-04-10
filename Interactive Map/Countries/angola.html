@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<title>Angola</title>
+</head>
+
+<body>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script>
+		window.onload = function () {
+	
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+            text: "Chinese FDI Flow vs. Net flows in Angola from 2005-2020 (in US$ millions)"
+        },
+        axisY: {
+            title: "US$ millions",
+            titleFontColor: "#000000",
+            lineColor: "#000000",
+            labelFontColor: "#000000",
+            tickColor: "#000000"
+        },
+
+        toolTip: {
+            shared: true
+        },
+        legend: {
+            cursor: "pointer",
+            itemclick: toggleDataSeries
+        },
+        data: [{
+            type: "column",
+            name: "Chinese FDI Flow",
+            legendText: "Chinese FDI Flow",
+            showInLegend: true,
+            dataPoints: [
+                { label: "2005", y: 0.47 },
+                { label: "2006", y: 22.39 },
+                { label: "2007", y: 41.19 },
+                { label: "2008", y: -9.57 },
+                { label: "2009", y: 8.31 },
+                { label: "2010", y: 101.11 },
+                { label: "2011", y: 72.72 },
+                { label: "2012", y: 392.08 },
+                { label: "2013", y: 224.05 },
+                { label: "2014", y: -448.57 },
+                { label: "2015", y: 57.74 },
+                { label: "2016", y: 164.49 },
+                { label: "2017", y: 637.55 },
+                { label: "2018", y: 270.34 },
+                { label: "2019", y: 383.24 },
+                { label: "2020", y: 125.36 }
+            ]
+        },
+
+        {
+            type: "column",
+            name: "Net Flows",
+            legendText: "Net Flows",
+            showInLegend: true,
+            dataPoints: [
+                { label: "2005", y: -1304.00 },
+                { label: "2006", y: -37.714 },
+                { label: "2007", y: -893.342 },
+                { label: "2008", y: 1679 },
+                { label: "2009", y: 2205 },
+                { label: "2010", y: -3227 },
+                { label: "2011", y: -3024 },
+                { label: "2012", y: -1465 },
+                { label: "2013", y: -7120 },
+                { label: "2014", y: 3658 },
+                { label: "2015", y: 10028 },
+                { label: "2016", y: -179.517 },
+                { label: "2017", y: -7397 },
+                { label: "2018", y: -6456 },
+                { label: "2019", y: -4098 },
+                { label: "2020", y: -1866 },
+
+            ]
+        }]
+    });
+    chart.render();
+
+    function toggleDataSeries(e) {
+        if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        }
+        else {
+            e.dataSeries.visible = true;
+        }
+        chart.render();
+    }
+
+}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+</head>
+<title>Equatorial Guinea</title>
+
+<body>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Chinese FDI Flow vs. Net flows in Equatorial Guinea from 2005-2020 (in US$ millions)"
+                },
+                axisY: {
+                    title: "US$ millions",
+                    titleFontColor: "#000000",
+                    lineColor: "#000000",
+                    labelFontColor: "#000000",
+                    tickColor: "#000000"
+                },
+
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    itemclick: toggleDataSeries
+                },
+                data: [{
+                    type: "column",
+                    name: "Chinese FDI Flow",
+                    legendText: "Chinese FDI Flow",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 6.35 },
+                        { label: "2006", y: 10.19 },
+                        { label: "2007", y: 12.82 },
+                        { label: "2008", y: -4.86 },
+                        { label: "2009", y: 20.88 },
+                        { label: "2010", y: 22.08 },
+                        { label: "2011", y: 12.47 },
+                        { label: "2012", y: 138.84 },
+                        { label: "2013", y: 22.41 },
+                        { label: "2014", y: 33.13 },
+                        { label: "2015", y: -13.04 },
+                        { label: "2016", y: -24.91 },
+                        { label: "2017", y: 71.11 },
+                        { label: "2018", y: 3.80 },
+                        { label: "2019", y: -44.60 },
+                        { label: "2020", y: -49.12 }
+                    ]
+                },
+
+                {
+                    type: "column",
+                    name: "Net Flows",
+                    legendText: "Net Flows",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 769.146 },
+                        { label: "2006", y: 469.506 },
+                        { label: "2007", y: 1243 },
+                        { label: "2008", y: -793.872 },
+                        { label: "2009", y: 1636 },
+                        { label: "2010", y: 2734 },
+                        { label: "2011", y: 1975 },
+                        { label: "2012", y: 985.256 },
+                        { label: "2013", y: 582.948 },
+                        { label: "2014", y: 167.875 },
+                        { label: "2015", y: 233.325 },
+                        { label: "2016", y: 53.998 },
+                        { label: "2017", y: 304.827 },
+                        { label: "2018", y: 396.077 },
+                        { label: "2019", y: 452.287 },
+                        { label: "2020", y: 529.894 }
+
+                    ]
+                }]
+            });
+            chart.render();
+
+            function toggleDataSeries(e) {
+                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                    e.dataSeries.visible = false;
+                }
+                else {
+                    e.dataSeries.visible = true;
+                }
+                chart.render();
+            }
+
+        }
+    </script>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>

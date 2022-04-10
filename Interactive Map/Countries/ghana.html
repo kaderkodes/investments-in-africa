@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+</head>
+<title>Ghana</title>
+
+<body>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Chinese FDI Flow vs. Net flows in Ghana from 2005-2020 (in US$ millions)"
+                },
+                axisY: {
+                    title: "US$ millions",
+                    titleFontColor: "#000000",
+                    lineColor: "#000000",
+                    labelFontColor: "#000000",
+                    tickColor: "#000000"
+                },
+
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    itemclick: toggleDataSeries
+                },
+                data: [{
+                    type: "column",
+                    name: "Chinese FDI Flow",
+                    legendText: "Chinese FDI Flow",
+                    showInLegend: true,
+                    dataPoints: [
+                    { label: "2005", y: 2.57 },
+                        { label: "2006", y: 0.50},
+                        { label: "2007", y: 1.85 },
+                        { label: "2008", y: 10.99 },
+                        { label: "2009", y: 49.35 },
+                        { label: "2010", y: 55.98 },
+                        { label: "2011", y: 40.07},
+                        { label: "2012", y: 208.49 },
+                        { label: "2013", y: 122.51},
+                        { label: "2014", y: 72.90},
+                        { label: "2015", y: 283.22 },
+                        { label: "2016", y: 490.61},
+                        { label: "2017", y: 44.20},
+                        { label: "2018", y: 142.25},
+                        { label: "2019", y: 29.41},
+                        { label: "2020", y: -6.71}
+                    ]
+                },
+
+                {
+                    type: "column",
+                    name: "Net Flows",
+                    legendText: "Net Flows",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 144.970 },
+                        { label: "2006", y: 636.010 },
+                        { label: "2007", y: 1383},
+                        { label: "2008", y: 2715 },
+                        { label: "2009", y: 2373 },
+                        { label: "2010", y: 2527 },
+                        { label: "2011", y: 3248 },
+                        { label: "2012", y: 3295 },
+                        { label: "2013", y: 3227},
+                        { label: "2014", y: 3363},
+                        { label: "2015", y: 3192 },
+                        { label: "2016", y: 3485},
+                        { label: "2017", y: 3255 },
+                        { label: "2018", y: 2989 },
+                        { label: "2019", y: 3880 },
+                        { label: "2020", y: 1876 },
+
+                    ]
+                }]
+            });
+            chart.render();
+
+            function toggleDataSeries(e) {
+                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                    e.dataSeries.visible = false;
+                }
+                else {
+                    e.dataSeries.visible = true;
+                }
+                chart.render();
+            }
+
+        }
+    </script>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Background</title>
+    <style id="general">
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        body,
+
+        html {
+            height: 100%
+        }
+
+        .bgimg {
+            background-image: url("images/background_homepage.jpg");
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .bgimg2 {
+            background-image: url("images/background2.jpg");
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+
+    <style id="navbar">
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #000000;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+
+    <div id="navbar">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="./index.html">Home</a>
+                <a href="./interactive.html">Interactive Map</a>
+                <a href="./background.html">Background</a>
+            </div>
+        </div>
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+            }
+        </script>
+
+    </div>
+
+</head>
+
+<body>
+    <div class="w3-display-middle">
+        <h2 class="w3-center">BACKGROUND</h2>
+        <p>The purpose of this website is to graphically represent China’s foreign direct investments in each
+            country in Africa. This site is hosted via Netlify and coded using HTML, CSS and JavaScript.</p>
+
+        <h2 class="w3-center">HOW TO NAVIGATE THE MAP</h2>
+        <ol>
+            <li>Click the hamburger navigation bar on the top left</li>
+            <li>Select the pages you want to navigate to</li>
+            <li>Once the interactive map page is open, hover over any country to display its name</li>
+            <li>Click the country to open the bar chart, which will open in a new tab</li>
+        </ol>
+
+        <h2 class="w3-center">RESOURCES</h2>
+        <p>The map was created using SVG, the rough map was obtained from <a
+                href="https://commons.wikimedia.org/wiki/Category:SVG_blank_maps_of_Africa"
+                target="_blank">Wikimedia</a> and then edited to fit the
+            data. Data about each country's net FDI inflows was obtained from the <a
+                href="https://data.worldbank.org/indicator/BX.KLT.DINV.CD.WD?end=2020&locations=DZ&start=2005"
+                target="_blank">World Bank website</a>.
+            Data about China’s FDI into each country was obtained via The Statistical Bulletin of China's
+            Outward
+            Foreign Direct Investment published by China's Ministry of Commerce (MOFCOM). The data was collected and
+            presented in an excel file that was accessed via the <a
+                href="http://www.sais-cari.org/chinese-investment-in-africa" target="_blank">China Africa Research
+                Initiative (CARI) website</a>.</p>
+
+        <h2 class="w3-center">UPCOMING UPDATES</h2>
+        <p>Since the focus of this website was to display the data, the styling is not optimal, as a result,
+            over
+            the next couple weeks I will be updating the CSS (styling of the page), to make it look
+            better and easier to
+            navigate. I will also update each country’s chart, to display total investments from China and to
+            display investments from US, making it easier
+            to
+            compare how much the US and China have invested in the country.
+            In the future, the site will be able to show a preview of the graphs when hovering over each on the map.
+            Due to the magnification of the map, I was unable to add 5 countries (Cape Verde, Comoros,
+            Mauritius,
+            Seychelles, Sao Tome & Principe) due to their size. I am still trying to figure out how to
+            plot
+            them on the map or find another way to present their charts.
+        </p>
+    </div>
+
+
+
+</body>
+
+</html>

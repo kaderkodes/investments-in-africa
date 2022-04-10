@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senegal</title>
+</head>
+<body>
+    <script>
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                title: {
+                    text: "Chinese FDI Flow vs. Net flows in Senegal from 2005-2020 (in US$ millions)"
+                },
+                axisY: {
+                    title: "US$ millions",
+                    titleFontColor: "#000000",
+                    lineColor: "#000000",
+                    labelFontColor: "#000000",
+                    tickColor: "#000000"
+                },
+
+                toolTip: {
+                    shared: true
+                },
+                legend: {
+                    cursor: "pointer",
+                    itemclick: toggleDataSeries
+                },
+                data: [{
+                    type: "column",
+                    name: "Chinese FDI Flow",
+                    legendText: "Chinese FDI Flow",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 0.00},
+                        { label: "2006", y: 0.00},
+                        { label: "2007", y: 0.24 },
+                        { label: "2008", y: 3.60},
+                        { label: "2009", y: 11.04},
+                        { label: "2010", y: 18.96},
+                        { label: "2011", y: 0.19},
+                        { label: "2012", y: 4.47},
+                        { label: "2013", y: 10.44 },
+                        { label: "2014", y: 7.06},
+                        { label: "2015", y: -7.94},
+                        { label: "2016", y: 19.85},
+                        { label: "2017", y: 65.41},
+                        { label: "2018", y: 83.93},
+                        { label: "2019", y: -84.88},
+                        { label: "2020", y: 213.40}
+                    ]
+                },
+
+                {
+                    type: "column",
+                    name: "Net Flows",
+                    legendText: "Net Flows",
+                    showInLegend: true,
+                    dataPoints: [
+                        { label: "2005", y: 167.9 },
+                        { label: "2006", y: 289.8 },
+                        { label: "2007", y: 351.4 },
+                        { label: "2008", y: 455.7 },
+                        { label: "2009", y: 331.4 },
+                        { label: "2010", y: 272 },
+                        { label: "2011", y: 338.6 },
+                        { label: "2012", y: 276.1 },
+                        { label: "2013", y: 311.3 },
+                        { label: "2014", y: 403 },
+                        { label: "2015", y: 409.16 },
+                        { label: "2016", y: 472.4 },
+                        { label: "2017", y: 588.2 },
+                        { label: "2018", y: 847.8},
+                        { label: "2019", y: 1065 },
+                        { label: "2020", y: 1481 }
+
+                    ]
+                }]
+            });
+            chart.render();
+
+            function toggleDataSeries(e) {
+                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                    e.dataSeries.visible = false;
+                }
+                else {
+                    e.dataSeries.visible = true;
+                }
+                chart.render();
+            }
+
+        }
+    </script>
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</body>
+</html>
