@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>MAP LEGEND</title>
+    <style id="navbar">
+        body{
+            font-family: 'Lato', sans-serif;
+        }
+        .overlay {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #000000;
+        }
+
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .overlay a {
+                font-size: 20px
+            }
+
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+    </style>
+
+    <div id="navbar">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="./index.html">Home</a>
+                <a href="./interactive.html">Interactive Map</a>
+                <a href="./background.html">Background</a>
+                <a href="./map_legend.html">Map Legend</a>
+            </div>
+        </div>
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+        <script>
+            function openNav() {
+                document.getElementById("myNav").style.display = "block";
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.display = "none";
+            }
+        </script>
+
+    </div>
+
+</head>
+
+<body>
+    <div class="w3-display-container w3-text-black w3-display-middle">
+
+
+        <h3 class="w3-center">MAP LEGEND</h3>
+        <p>The map is colour coded based on the amount of funding each country received from China. The countries were placed in categories for easier classification </p>
+        <p>Category 1 painted in gainsboro (hex code #DCDCDC) represents countries than did not receive any funding from
+            China since 2005.</p>
+        <p>Category 2 painted in aliceblue (hex code #F0F8FF) represents countries than received less than US $10
+            million in net investments from China since 2005.</p>
+        <p>Category 3 painted in lightskyblue (hex code #87CEFA) represents countries than received less than US $100
+            million in net investments from China since 2005.</p>
+        <p>Category 4 painted in deepskyblue (hex code #00BFFF) represents countries than received less than US $1
+            billion in net investments from China since 2005.</p>
+        <p>Category 5 painted in royalblue (hex code #4169E1) represents countries than received more than US $1 billion
+            in net investments from China since 2005.</p>
+        <p>Category 6 painted in lightsalmon (hex code # #FFA07A) represents countries that have a negative net FDI
+            inflow from China since 2005.</p>
+
+    </div>
+</body>
+
+</html>
