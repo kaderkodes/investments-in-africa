@@ -7,6 +7,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
@@ -26,9 +27,9 @@
 						<div id="menu">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">About</a></li>
-								<li><a href="elements.html">Interactive Map</a></li>
-								<li><a href="#">Maps</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="map.html">Interactive Map</a></li>
+								<li><a href="">Individual Graphs</a></li>
 							</ul>
 						</div>
 					</li>
@@ -38,11 +39,53 @@
 
 		<!-- Main -->
 		<article id="main">
-            <div style="text-align:center">
-                <object id="svg-object" data="./Blank_Map-Africa.svg" type="image/svg+xml"></object>
-            </div>
-			
+			<div style="text-align:center;">
+				<object id="svg-object" data="./Blank_Map-Africa.svg" type="image/svg+xml"></object>
+			</div>
+
 		</article>
+
+		<section id="map" class="hidden">
+			<table>
+				<tr>
+					<th>Colour</th>
+					<th>Category</th>
+					<th class="stb">Funding</th>
+				</tr>
+				<tr>
+					<td class="cat1"></td>
+					<td>1</td>
+					<td>Did not receive any funding</td>
+				</tr>
+				<tr>
+					<td class="cat2"></td>
+					<td>2</td>
+					<td>Less than US $10 million in net investments</td>
+				</tr>
+				<tr>
+					<td class="cat3"></td>
+					<td>3</td>
+					<td>Less than US $100 million in net investments</td>
+				</tr>
+				<tr>
+					<td class="cat4"></td>
+					<td>4</td>
+					<td>Less than US $1 million in net investments</td>
+				</tr>
+				<tr>
+					<td class="cat5"></td>
+					<td>5</td>
+					<td>More than US $1 billion in net investments</td>
+				</tr>
+				<tr>
+					<td class="cat6"></td>
+					<td>6</td>
+					<td>A negative net FDI inflow</td>
+				</tr>
+				</tr>
+			</table>
+		</section>
+
 	</div>
 
 	<!-- Scripts -->

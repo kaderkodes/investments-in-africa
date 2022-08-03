@@ -1,0 +1,43 @@
+#map > table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+table {
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin: 3em 3em;
+}
+
+.cat1{
+    background-color: #DCDCDC
+}
+
+.cat2{
+    background-color: #F0F8FF
+}
+
+.cat3{
+    background-color: #87CEFA
+}
+
+.cat4{
+    background-color: #00BFFF
+}
+
+.cat5{
+    background-color: #4169E1
+}
+
+.cat6{
+    background-color: #FFA07A
+}
+
+.stb{
+    text-align: center;
+}
+
+/* .hidden{
+    display: none;
+} */

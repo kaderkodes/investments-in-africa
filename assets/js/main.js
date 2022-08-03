@@ -81,3 +81,8 @@
 		}
 
 })(jQuery);
+
+// document.querySelector('#map').addEventListener('onClick', displayMap())
+// function displayMap(){
+// 	document.querySelector('#map').classList.toggle = 'hidden'
+// }
