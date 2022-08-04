@@ -1,8 +1,3 @@
-/*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
 
@@ -81,8 +76,3 @@
 		}
 
 })(jQuery);
-
-// document.querySelector('#map').addEventListener('onClick', displayMap())
-// function displayMap(){
-// 	document.querySelector('#map').classList.toggle = 'hidden'
-// }
